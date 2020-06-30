@@ -19,7 +19,6 @@ public class SolrConfig {
 
 	@Bean
 	public SolrClient solrClient() {
-		System.out.println("$$$$$$$$$$$$$  "+solrURL+"  $$$$$$$$$$");
 		return new HttpSolrClient.Builder(solrURL).build();
 	}
 
