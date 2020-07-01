@@ -19,5 +19,7 @@ Solr is not meant to be a replacement for your RDBMS. Rather, Solr should be use
 to efficiently query your data source and providing enough information to the calling component to query your RDBMS for additional information. The data stored in the 
 underlying Lucene index is essentially a fully searchable view of your data that resides as a decoupled component in your system.
 
-https://dzone.com/articles/search-engine-solr-vs-relational-database
-https://lucidworks.com/post/solr-and-rdbms-the-basics-of-designing-your-application-for-the-best-of-both/#:~:text=Solr%20readily%20accommodates%20having%20a,more%20tables%20and%20foreign%20keys.
+
+[search-engine-solr-vs-relational-database](https://dzone.com/articles/search-engine-solr-vs-relational-database)
+
+[solr-and-rdbms-the-basics-of-designing-your-application-for-the-best-of-both](https://lucidworks.com/post/solr-and-rdbms-the-basics-of-designing-your-application-for-the-best-of-both)
