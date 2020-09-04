@@ -8,60 +8,60 @@ import org.springframework.data.solr.core.mapping.SolrDocument;
 @SolrDocument(collection = "demo")
 public class Book {
 
-	@Id
-	@Field
-	private String id;
+    @Id
+    @Field
+    private String id;
 
-	@Field
-	private String name;
+    @Field
+    private String name;
 
-	@Field
-	private Boolean inStock;
+    @Field
+    private Boolean inStock;
 
-	@Indexed(name = "genre_s")
-	private String genre;
-	
-	public Book() {
-		
-	}
+    @Indexed(name = "genre_s")
+    private String genre;
 
-	public Book(String id, String name, Boolean inStock, String genre) {
-		this.id = id;
-		this.name = name;
-		this.inStock = inStock;
-		this.genre = genre;
-	}
+    public Book() {
 
-	public String getId() {
-		return id;
-	}
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public Book(String id, String name, Boolean inStock, String genre) {
+        this.id = id;
+        this.name = name;
+        this.inStock = inStock;
+        this.genre = genre;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public Boolean getInStock() {
-		return inStock;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setInStock(Boolean inStock) {
-		this.inStock = inStock;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getGenre() {
-		return genre;
-	}
+    public Boolean getInStock() {
+        return inStock;
+    }
 
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
+    public void setInStock(Boolean inStock) {
+        this.inStock = inStock;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
 }

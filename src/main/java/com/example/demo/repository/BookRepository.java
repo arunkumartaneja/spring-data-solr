@@ -12,9 +12,9 @@ import com.example.demo.model.Book;
 
 public interface BookRepository extends SolrCrudRepository<Book, String> {
 
-	@Query("name:*?0* OR genre_t:*?0*")
-	public List<Book> findAll(String query);
+    @Query("name:*?0* OR genre_t:*?0*")
+    public List<Book> findAll(String query);
 
-	@Highlight(prefix = "<strong>", postfix = "</strong>", fields = { "name" })
-	HighlightPage<Book> findByNameLike(String name, Pageable page);
+    @Highlight(prefix = "<strong>", postfix = "</strong>", fields = {"name"})
+    HighlightPage<Book> findByNameLike(String name, Pageable page);
 }

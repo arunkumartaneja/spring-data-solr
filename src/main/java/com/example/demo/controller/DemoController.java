@@ -19,37 +19,37 @@ import com.example.demo.repository.BookRepository;
 @RequestMapping("/book/")
 public class DemoController {
 
-	@Autowired
-	private BookRepository bookRepository;
+    @Autowired
+    private BookRepository bookRepository;
 
-	@GetMapping
-	public String hello() {
-		return "hello";
-	}
+    @GetMapping
+    public String hello() {
+        return "hello";
+    }
 
-	@GetMapping("add")
-	public Book add() {
-		return bookRepository.save(getBook());
-	}
+    @GetMapping("add")
+    public Book add() {
+        return bookRepository.save(getBook());
+    }
 
-	@GetMapping("search/{query}")
-	public List<Book> search(@PathVariable String query) {
-		return bookRepository.findAll(query);
-	}
+    @GetMapping("search/{query}")
+    public List<Book> search(@PathVariable String query) {
+        return bookRepository.findAll(query);
+    }
 
-	@GetMapping("search-name/{query}")
-	public HighlightPage<Book> searchByName(@PathVariable String query) {
-		Pageable paging = PageRequest.of(0, 10);
-		return bookRepository.findByNameLike(query, paging);
-	}
+    @GetMapping("search-name/{query}")
+    public HighlightPage<Book> searchByName(@PathVariable String query) {
+        Pageable paging = PageRequest.of(0, 10);
+        return bookRepository.findByNameLike(query, paging);
+    }
 
-	private Book getBook() {
-		Random random = new Random();
-		String id = random.ints(97, 123).limit(5)
-				.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
-		Book book = new Book(id, "name-" + id, true, "genre-" + id);
+    private Book getBook() {
+        Random random = new Random();
+        String id = random.ints(97, 123).limit(5)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+        Book book = new Book(id, "name-" + id, true, "genre-" + id);
 
-		return book;
-	}
+        return book;
+    }
 
 }

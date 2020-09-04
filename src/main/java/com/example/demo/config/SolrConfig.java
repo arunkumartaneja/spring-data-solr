@@ -14,16 +14,16 @@ import org.springframework.data.solr.repository.config.EnableSolrRepositories;
 @ComponentScan
 public class SolrConfig {
 
-	@Value("${spring.data.solr.host}")
-	String solrURL;
+    @Value("${spring.data.solr.host}")
+    String solrURL;
 
-	@Bean
-	public SolrClient solrClient() {
-		return new HttpSolrClient.Builder(solrURL).build();
-	}
+    @Bean
+    public SolrClient solrClient() {
+        return new HttpSolrClient.Builder(solrURL).build();
+    }
 
-	@Bean
-	public SolrTemplate solrTemplate(SolrClient client) throws Exception {
-		return new SolrTemplate(client);
-	}
+    @Bean
+    public SolrTemplate solrTemplate(SolrClient client) throws Exception {
+        return new SolrTemplate(client);
+    }
 }
